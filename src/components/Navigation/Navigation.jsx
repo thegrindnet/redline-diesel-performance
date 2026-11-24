@@ -1,0 +1,4 @@
+import {useState} from 'react';
+import './Navigation.css';
+import {navigation} from '../../utils/constants.js';
+export default function Navigation(){const [open,setOpen]=useState(false);return <nav className={`navigation${open?' navigation_open':''}`} aria-label="Main navigation"><button className="navigation__toggle" type="button" aria-expanded={open} aria-controls="navigation-list" onClick={()=>setOpen(!open)}><span className="navigation__toggle-line"/><span className="navigation__toggle-line"/><span className="navigation__toggle-line"/><span className="navigation__toggle-label">Menu</span></button><ul className="navigation__list" id="navigation-list">{navigation.map(item=><li className="navigation__item" key={item.href}><a className="navigation__link" href={item.href} onClick={()=>setOpen(false)}>{item.label}</a></li>)}</ul></nav>}

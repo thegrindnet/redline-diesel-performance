@@ -1,0 +1,3 @@
+import './FAQ.css';
+import { faqs } from '../../utils/constants.js';
+export default function FAQ(){return <section className="faq" id="faq" aria-labelledby="faq-heading"><div className="faq__inner"><div><p className="section-heading__eyebrow">GOOD TO KNOW</p><h2 className="section-heading__title" id="faq-heading">QUICK <span>ANSWERS.</span></h2><p className="faq__intro">The basics before you pick up the phone.</p></div><div className="faq__list">{faqs.map(item=><details className="faq__item" key={item.question}><summary className="faq__question">{item.question}<span className="faq__plus" aria-hidden="true">+</span></summary><p className="faq__answer">{item.answer}</p></details>)}</div></div></section>}
